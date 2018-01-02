@@ -4,4 +4,3 @@
 ```
  console.log('啦啦')
 ```
-<img src="C:\Users\lx\Documents\HBuilderProject\liangcang\img/1.jpg">
