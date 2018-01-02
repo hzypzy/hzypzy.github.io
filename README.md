@@ -4,3 +4,4 @@
 ```
  console.log('啦啦')
 ```
+<img src="http://img4.imgtn.bdimg.com/it/u=4238472474,1961950718&fm=27&gp=0.jpg">
