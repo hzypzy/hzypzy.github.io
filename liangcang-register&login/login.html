@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		
+		<link rel="stylesheet" href="css/new_file.css" />
+
+	</head>
+	<body>
+		
+		<div class="container">
+			
+			<!--标题-->
+			<img src="img/nlicon.png"  />
+			
+			<!-- 登陆框-->
+			
+			<div class="username">
+				<span></span>
+				<input type="text" placeholder="请输入用户名"/>
+			</div>
+			
+			
+			<div class="password">
+				<span></span>
+				<input type="password" placeholder="请输入密码"/>
+			</div>
+			
+			<!-- 自动登陆 -->
+			<div class="autologin">
+				<input type="checkbox" /> 自动登陆
+			</div>
+			
+			<!-- 登陆按钮-->
+			<div class="btnLogin" id="aLogin">
+				<input type="button" value="登陆" />
+				
+				<!--<a href="http://www.baidu.com" id="aLogin"> 登陆 </a>-->
+			</div>
+			
+			<!-- 更多登陆-->
+			<div class="moreLogin">
+				<a href="#">更多登陆方式 > </a>
+			</div>
+		</div>
+		
+	</body>
+</html>
+
+<script type="text/javascript" src="js/loginRegister.js" ></script>
+<script>
+	
+
+
+// 登陆 与 注册 中间存在大量重复代码！
+// ==> 函数封装，重复利用
+// 怎么做：
+//  1. 定义函数 （名字自己取）
+//  2. 函数的参数要传递什么？  （传递 参数JSON对象 ）
+//  3. 函数需要返回值吗？（不需要）
+// 练习： 封装这个函数，做完发到群里面
+
+var oBtnLogin = document.querySelector(".btnLogin input");
+var oUsername = document.querySelector(".username input");
+var oPassword = document.querySelector(".password input");
+
+var aLogin = document.getElementById("aLogin");
+aLogin.onclick = oBtnLogin.onclick = function() {
+	
+	var strUsername = oUsername.value
+	var strPassword = oPassword.value
+
+	var json = {
+		"username": strUsername,
+		password: strPassword,
+		status: "login"
+	}
+	 //调用函数
+	loginOrRegister(json, function(obj) {
+		if (obj.code == 0) {
+			alert("登陆成功")
+			
+			// 页面跳转
+			location.href = "https://hzypzy.github.io/liangcang/index.html"
+			
+			
+			
+		} else {
+			alert(obj.message)
+		}
+	})
+}
+
+
+// 自动登陆实现
+// 1. 页面加载完成事件    onload
+// 2. 获取【保存的值】
+//      （1） 有值      				（2） 没值
+//       	自动发ajax登陆			继续输密码登陆
+
+
+//四部曲
+
+
+</script>
