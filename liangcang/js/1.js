@@ -85,25 +85,28 @@
 				}
 		}
 	//导航二级菜单样式js
+	// cloud zack sephiroth 为三个lil从上而下，打扰了
 //	var oL=document.querySelectorAll('.lil');console.log(oL);
 	var oC=document.getElementById('cloud');//console.log(oC);
-	var oZ=document.getElementById('zack');//console.log(oZ);
+	var oZk=document.getElementById('zack');//console.log(oZ);
+	//↑这里oZ已经被占用了，强行改成了oZB, 打扰了
 	var oS=document.getElementById('sephiroth');//console.log(oS);
 	
 	oC.onmouseover=function(){
-		oZ.style.top=120+'px';
+		//console.log(oZ);console.log(oS);
+		oZk.style.top=120+'px';
 		oS.style.top=150+'px';
 	}
 	oC.onmouseout=function(){
-		oZ.style.top=0+'px';
+		oZk.style.top=0+'px';
 		oS.style.top=0+'px';
 	}
 	
 	
-	oZ.onmouseover=function(){
+	oZk.onmouseover=function(){
 		oS.style.top=120+'px';
 	}
-	oZ.onmouseout=function(){
+	oZk.onmouseout=function(){
 		oS.style.top=0+'px';
 	}
 	
