@@ -115,7 +115,7 @@
 //	}
 
 //吸顶功
-	var oHeader=document.getElementsByClassName('header')[0];console.log(oHeader)
+	var oHeader=document.getElementsByClassName('header')[0];//console.log(oHeader)
 	window.onscroll=function(){
 		var t=document.body.scrollTop||document.documentElement.scrollTop;
 		if (t>56) {
@@ -123,9 +123,10 @@
 			oHeader.style.top=-56+'px';
 			oHeader.style.left=0+'px'
 		}else{
-			oHeader.style.position="fixed";
+			oHeader.style.position="";
 			oHeader.style.top=0+'px';
 			oHeader.style.left=0+'px'
+			
 		}
 		//头部&滚动
 		//用direction获取1(鼠标上移)||-1(鼠标下移)，表示鼠标滚动的方向。
@@ -172,3 +173,4 @@
 //		oHeader.style.left=0+'px'
 //	}
 // }
+

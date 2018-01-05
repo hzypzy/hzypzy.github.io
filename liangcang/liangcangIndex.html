@@ -613,11 +613,15 @@
 			<div class="zuoyou you" id="next"></div>			
 		
 		</div>
-		<div class="num" id="num">
+		<div class="numBig">
+			<div class="num" id="num">
 			<span class="activecolor"></span>
 			<span></span>
 			<span></span>
 		</div>
+		</div>
+		
+		
 		<a href="#headerr" id="topBack">
 		
 		</a>
@@ -666,7 +670,7 @@
 						count--;
 						ulgun=count*liwid;
 						if(count<0){
-							aUl.style.left=-1995+'px';
+							aUl.style.left=-3000+'px';
 							count=2;
 							ulgun=count*liwid;
 						}
@@ -685,16 +689,57 @@
 					ulgun=count*liwid;
 				}
 				numbers();
-				animate(aUl,{'left':-ulgun+'px'},800,function(){})
-		},1500)
+				animate(aUl,{'left':-ulgun+'px'},600,function(){})
+		},3000)
 	} 
+	
 	Times();
-
-	//鼠标移入跟移出
+	//轮播图小圆点样式
+	var oYuan=document.getElementsByClassName('zuoyou')[0];
+	var oYuan1=document.getElementsByClassName('zuoyou')[1];
+	//console.log(oYuan)
+	var oZ=document.getElementsByClassName('z')[0];
+	var oY=document.getElementsByClassName('y')[0];
+	//console.log(oZ)
+	oZ.onmouseover=function(){
+		oYuan.style.opacity=0.5;
+	}
+	oZ.onmouseout=function(){
+		oYuan.style.opacity=0;
+	}
+	oY.onmouseover=function(){
+		oYuan1.style.opacity=0.5;
+	}
+	oY.onmouseout=function(){
+		oYuan1.style.opacity=0;
+	}
+	
+	oYuan.onmouseover=function(){
+		oYuan.style.opacity=0.5;
+	}
+	oYuan.onmouseout=function(){
+		oYuan.style.opacity=0;
+	}
+	
+	oYuan1.onmouseover=function(){
+		oYuan1.style.opacity=0.5;
+	}
+	oYuan1.onmouseout=function(){
+		oYuan1.style.opacity=0;
+	}
+	
+	//div鼠标移入跟移出
+	
 	aDiv.onmouseover=function(){
+		
+		oZ.style.display='block';
+		oY.style.display='block';
 		clearInterval(Time);
 	}
 	aDiv.onmouseout=function(){
+		
+		oZ.style.display='none';
+		oY.style.display='none';
 		Times();
 	}
 	//number动画效果
@@ -722,14 +767,17 @@
 			})(i);
 	 }
 	 //number点击效果
-   for(var i=0;i<lilength;i++){
+	 for(var i=0;i<lilength;i++){
 			(function(i){
 				aNum[i].onclick=function(){
-				animate(aUl,{'left':-ulgun*i+'px'},1000,function(){})
+					ulgun=1000;//这里有个很奇怪的问题
+					clearInterval(Time);
+					//console.log(i)
+						animate(aUl,{'left':-ulgun*i+'px'},1000,function(){})
+						
 				}
 			})(i);
 	 }
-
-//jiahwoidadwpdsjlaiuwda
+//jiahwoidadwpdsjlaiuwda窗口卷动 头部定位
 
 </script>
